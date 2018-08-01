@@ -73,4 +73,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp" />
 
+    <TextView
+        android:text="Myo Battery Level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textStyle="normal|bold"
+        android:layout_alignTop="@+id/bDetect"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/battery_level"
+        tools:text="0.0"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

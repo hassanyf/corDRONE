@@ -105,7 +105,7 @@ public class MainActivity extends ActionBarActivity implements BluetoothAdapter.
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         menu.add(0, MENU_LIST, 0, "Find Myo");
-        menu.add(0, MENU_BYE, 0, "Good Bye");
+//        menu.add(0, MENU_BYE, 0, "Good Bye");
         return true;
     }
 

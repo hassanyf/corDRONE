@@ -67,67 +67,9 @@ public class MyoGattCallback extends BluetoothGattCallback {
     public MyoGattCallback(Handler handler, TextView view, HashMap<String,View> views) {
         mHandler = handler;
         dataView = view;
-        btn_emg1 = (Button) views.get("btn1");
+
         nowButton = btn_emg1;
-        btn_emg1.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                nowGraphIndex = 0;
-                nowButton = btn_emg1;
-            }});
-        btn_emg2 = (Button) views.get("btn2");
-        btn_emg2.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                nowGraphIndex = 1;
-                nowButton = btn_emg2;
-            }});
-        btn_emg3 = (Button) views.get("btn3");
-        btn_emg3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 2;
-                nowButton = btn_emg3;
-            }
-        });
-        btn_emg4 = (Button) views.get("btn4");
-        btn_emg4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 3;
-                nowButton = btn_emg4;
-            }
-        });
-        btn_emg5 = (Button) views.get("btn5");
-        btn_emg5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 4;
-                nowButton = btn_emg5;
-            }
-        });
-        btn_emg6 = (Button) views.get("btn6");
-        btn_emg6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 5;
-                nowButton = btn_emg6;
-            }
-        });
-        btn_emg7 = (Button) views.get("btn7");
-        btn_emg7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 6;
-                nowButton = btn_emg7;
-            }
-        });
-        btn_emg8 = (Button) views.get("btn8");
-        btn_emg8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nowGraphIndex = 7;
-                nowButton = btn_emg8;
-            }
-        });
+
     }
 
     @Override
@@ -271,10 +213,7 @@ public class MyoGattCallback extends BluetoothGattCallback {
                     callback_msg = String.format("Serial Number     : %02x:%02x:%02x:%02x:%02x:%02x",
                             byteReader.getByte(), byteReader.getByte(), byteReader.getByte(),
                             byteReader.getByte(), byteReader.getByte(), byteReader.getByte()) +
-                            '\n' + String.format("Unlock            : %d", byteReader.getShort()) +
-                            '\n' + String.format("Classifier builtin:%d active:%d (have:%d)",
-                            byteReader.getByte(), byteReader.getByte(), byteReader.getByte()) +
-                            '\n' + String.format("Stream Type       : %d", byteReader.getByte());
+                            '\n' + String.format("Detected Myo Armband successfully");
 
                     mHandler.post(new Runnable() {
                         @Override

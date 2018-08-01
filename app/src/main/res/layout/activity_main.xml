@@ -10,21 +10,12 @@
         android:layout_height="wrap_content"
         android:text=" Myo Status"
         android:id="@+id/emgDataTextView"
-        android:textSize="15dp"
+        android:textSize="14sp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="26dp"
         android:layout_marginRight="20dp"
         android:background="@android:drawable/editbox_dropdown_light_frame"
         android:layout_below="@+id/bVibrate"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TRAIN W/ EMG"
-        android:id="@+id/bEMG"
-        android:onClick="onClickEMG"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -50,20 +41,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DISABLE EMG"
-        android:id="@+id/bStopEmg"
-        android:onClick="onClickNoEMG"
-        android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/emgDataTextView" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Save"
         android:id="@+id/bSave"
         android:onClick="onClickSave"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/emgDataTextView" />
+        android:layout_alignStart="@+id/emgDataTextView"
+        android:layout_alignEnd="@+id/bVibrate" />
 
     <Button
         android:layout_width="wrap_content"
@@ -72,6 +55,25 @@
         android:id="@+id/bDetect"
         android:onClick="onClickDetect"
         android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/emgDataTextView"
+        android:layout_toEndOf="@+id/bStopEmg" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRAIN W/ EMG"
+        android:id="@+id/bEMG"
+        android:onClick="onClickEMG"
+        android:layout_alignParentTop="true"
         android:layout_alignEnd="@+id/emgDataTextView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DISABLE EMG"
+        android:id="@+id/bStopEmg"
+        android:onClick="onClickNoEMG"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/bSave" />
 
 </RelativeLayout>

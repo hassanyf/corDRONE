@@ -14,19 +14,10 @@
         android:onClick="onClickVibration"
         android:layout_alignParentTop="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EMG"
-        android:id="@+id/bEMG"
-        android:onClick="onClickEMG"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Myo Status"
+        android:text=" Myo Status"
         android:id="@+id/emgDataTextView"
         android:textSize="15dp"
         android:layout_marginLeft="20dp"
@@ -39,7 +30,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="noEMG"
+        android:text="DISABLE EMG"
         android:id="@+id/bStopEmg"
         android:onClick="onClickNoEMG"
         android:layout_alignParentTop="true"
@@ -57,39 +48,29 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Detect"
+        android:text="PREDICT"
         android:id="@+id/bDetect"
         android:onClick="onClickDetect"
-        android:layout_alignTop="@+id/bSave"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TRAIN USING EMG"
+        android:id="@+id/bEMG"
+        android:onClick="onClickEMG"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gesture"
         android:id="@+id/gestureTextView"
-        android:textSize="25dp"
-        android:layout_below="@+id/bVibrate"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp" />
-
-    <TextView
-        android:text="Myo Battery Level"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:textStyle="normal|bold"
-        android:layout_alignTop="@+id/bDetect"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/battery_level"
-        tools:text="0.0"
-        android:textSize="18sp"
-        android:layout_below="@+id/textView2"
+        android:textSize="30sp"
+        android:layout_marginTop="102dp"
+        android:layout_below="@+id/emgDataTextView"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

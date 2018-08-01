@@ -19,6 +19,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.thalmic.myo.Myo;
+import com.thalmic.myo.AbstractDeviceListener;
+import com.thalmic.myo.Arm;
+import com.thalmic.myo.DeviceListener;
+import com.thalmic.myo.Hub;
+import com.thalmic.myo.Myo;
+import com.thalmic.myo.Pose;
+import com.thalmic.myo.Quaternion;
+import com.thalmic.myo.XDirection;
+import com.thalmic.myo.scanner.ScanActivity;
+
 import java.util.HashMap;
 
 public class MainActivity extends ActionBarActivity implements BluetoothAdapter.LeScanCallback {
@@ -49,14 +60,7 @@ public class MainActivity extends ActionBarActivity implements BluetoothAdapter.
     private GestureDetectModel  detectModel;
     private GestureDetectMethod detectMethod;
 
-    private Button graphButton1;
-    private Button graphButton2;
-    private Button graphButton3;
-    private Button graphButton4;
-    private Button graphButton5;
-    private Button graphButton6;
-    private Button graphButton7;
-    private Button graphButton8;
+    public TextView battery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +70,8 @@ public class MainActivity extends ActionBarActivity implements BluetoothAdapter.
         emgDataText = (TextView)findViewById(R.id.emgDataTextView);
         gestureText = (TextView)findViewById(R.id.gestureTextView);
         mHandler = new Handler();
+
+
 
         startNopModel();
 
@@ -139,15 +145,6 @@ public class MainActivity extends ActionBarActivity implements BluetoothAdapter.
             // Trying to connect GATT
             HashMap<String,View> views = new HashMap<String,View>();
             //put Button1〜8
-
-            views.put("btn1",graphButton1);
-            views.put("btn2",graphButton2);
-            views.put("btn3",graphButton3);
-            views.put("btn4",graphButton4);
-            views.put("btn5",graphButton5);
-            views.put("btn6",graphButton6);
-            views.put("btn7",graphButton7);
-            views.put("btn8",graphButton8);
 
             mMyoCallback = new MyoGattCallback(mHandler, emgDataText, views);
             mBluetoothGatt = device.connectGatt(this, false, mMyoCallback);

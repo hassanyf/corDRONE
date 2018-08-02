@@ -1,5 +1,8 @@
 package labs.hassan.myo;
 
+import android.nfc.Tag;
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -25,32 +28,35 @@ public class MyoDataFileReader {
         this.filename = filename;
     }
 
-    public void saveRAW(ArrayList<EmgCharacteristicData> myoDataList) {
-        File targetFile = getMyoDataFile();
-        targetFile.getParentFile().mkdirs();
-
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter(new FileOutputStream(new File("compareData.dat"),true));
-            for(EmgCharacteristicData myoData : myoDataList){
-                writer.println(myoData.getLine());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if(writer != null){
-                writer.close();
-            }
-        }
-    }
+//    public void saveRAW(ArrayList<EmgCharacteristicData> myoDataList) {
+//        File targetFile = getMyoDataFile();
+//        targetFile.getParentFile().mkdirs();
+//
+//        PrintWriter writer = null;
+//        try {
+////            writer = new PrintWriter(targetFile);
+//
+//            for(EmgCharacteristicData myoData : myoDataList){
+//                writer.println(myoData.getLine());
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            if(writer != null){
+//                writer.close();
+//            }
+//        }
+//    }
 
     public void saveMAX(ArrayList<EmgData> myoDataList) {
         File targetFile = getMyoDataFile();
         targetFile.getParentFile().mkdirs();
-
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter(new FileOutputStream(new File("compareData.dat"),true));
+            writer = new PrintWriter(new FileOutputStream(
+                    new File("sdcard/corDRONE/compareData.csv"),
+                    true /* append = true */));
+//            writer = new PrintWriter(targetFile);
             for(EmgData myoData : myoDataList){
                 writer.println(myoData.getLine());
             }

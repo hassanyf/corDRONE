@@ -6,8 +6,8 @@ import java.util.ArrayList;
  * Created by naoki on 15/04/17.
  */
 public class GestureDetectMethod {
-    private final static int COMPARE_NUM = 3;
-    private final static int STREAM_DATA_LENGTH = 5;
+    private final static int COMPARE_NUM = 5;
+    private final static int STREAM_DATA_LENGTH = 7;
     private final static Double THRESHOLD = 0.01;
 
     private final ArrayList<EmgData> compareGesture;
@@ -27,7 +27,9 @@ public class GestureDetectMethod {
         No_Gesture,
         Gesture_1,
         Gesture_2,
-        Gesture_3
+        Gesture_3,
+        Gesture_4,
+        Gesture_5
     }
 
     private GestureState getEnum(int i_gesture) {
@@ -38,6 +40,10 @@ public class GestureDetectMethod {
                 return GestureState.Gesture_2;
             case 2:
                 return GestureState.Gesture_3;
+            case 3:
+                return GestureState.Gesture_4;
+            case 4:
+                return GestureState.Gesture_5;
             default:
                 return GestureState.No_Gesture;
         }

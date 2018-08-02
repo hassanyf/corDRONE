@@ -11,8 +11,8 @@ public class GestureSaveMethod {
     private final static String TAG = "corDRONE";
     private final static String FileName = "compareData.csv";
 
-    private final static int COMPARE_NUM = 3;
-    private final static int SAVE_DATA_LENGTH = 5;
+    private final static int COMPARE_NUM = 5;
+    private final static int SAVE_DATA_LENGTH = 7;
     private final static int AVERAGING_LENGTH = 10;
 
     private ArrayList<EmgCharacteristicData> rawDataList = new ArrayList<>();

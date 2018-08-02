@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -16,16 +17,6 @@
         android:layout_marginRight="20dp"
         android:background="@android:drawable/editbox_dropdown_light_frame"
         android:layout_below="@+id/bVibrate"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gesture"
-        android:id="@+id/gestureTextView"
-        android:textSize="30sp"
-        android:layout_marginTop="102dp"
-        android:layout_below="@+id/emgDataTextView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -75,5 +66,24 @@
         android:onClick="onClickNoEMG"
         android:layout_alignParentBottom="true"
         android:layout_toEndOf="@+id/bSave" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gesture"
+        android:id="@+id/gestureTextView"
+        android:textSize="30sp"
+        android:layout_marginTop="79dp"
+        android:layout_below="@+id/emgDataTextView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/abc_edit_text_material"
+        android:layout_above="@+id/bStopEmg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp"
+        android:id="@+id/imageView" />
 
 </RelativeLayout>

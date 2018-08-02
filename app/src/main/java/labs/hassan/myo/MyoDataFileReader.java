@@ -2,6 +2,7 @@ package labs.hassan.myo;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,7 +31,7 @@ public class MyoDataFileReader {
 
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter(targetFile);
+            writer = new PrintWriter(new FileOutputStream(new File("compareData.dat"),true));
             for(EmgCharacteristicData myoData : myoDataList){
                 writer.println(myoData.getLine());
             }
@@ -49,7 +50,7 @@ public class MyoDataFileReader {
 
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter(targetFile);
+            writer = new PrintWriter(new FileOutputStream(new File("compareData.dat"),true));
             for(EmgData myoData : myoDataList){
                 writer.println(myoData.getLine());
             }

@@ -8,8 +8,8 @@ import java.util.ArrayList;
  * Created by naoki on 15/04/17.
  */
 public class GestureSaveMethod {
-    private final static String TAG = "Myo_compare";
-    private final static String FileName = "compareData.dat";
+    private final static String TAG = "corDRONE";
+    private final static String FileName = "compareData.csv";
 
     private final static int COMPARE_NUM = 3;
     private final static int SAVE_DATA_LENGTH = 5;
@@ -100,22 +100,6 @@ public class GestureSaveMethod {
             count++;
         }
 
-        // Averaging EMG-elements of maxDataList
-/*        int count = 0;
-        for (EmgData emg8Temp : maxDataList) {
-            if (count == 0) {
-                tempData = emg8Temp;
-            } else {
-                for (int i_element = 0; i_element < 8; i_element++) {
-                    tempData.setElement(i_element, tempData.getElement(i_element) + emg8Temp.getElement(i_element));
-                }
-            }
-            count++;
-        }
-        for (int i_element = 0; i_element < 8; i_element++) {
-            tempData.setElement(i_element, tempData.getElement(i_element)/maxDataList.size());
-        }
-*/
         if (maxDataList.size() < AVERAGING_LENGTH) {
             Log.e("GestureDetect", "Small aveData : " + maxDataList.size());
         }

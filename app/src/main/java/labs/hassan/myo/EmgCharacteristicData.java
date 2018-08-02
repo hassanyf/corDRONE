@@ -29,7 +29,7 @@ public class EmgCharacteristicData {
 
     public String getLine() {
         StringBuilder return_SB = new StringBuilder();
-        for (int i_emg_num = 0; i_emg_num < 16; i_emg_num++) {
+        for (int i_emg_num = 0; i_emg_num < 8; i_emg_num++) {
             return_SB.append(String.format("%d,", emgData.getByte()));
         }
         return return_SB.toString();
